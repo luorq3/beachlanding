@@ -1,5 +1,5 @@
 import numpy as np
-from envs.combatv4.scenario_builder import build_scenario
+from beachlanding.scenario_builder import build_scenario
 
 
 class CombatEnvCore:

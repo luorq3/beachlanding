@@ -3,7 +3,7 @@ from argparse import ArgumentParser
 
 import numpy as np
 
-from combatv4.combat_env_vs_bot import CombatEnv
+from beachlanding.combat_env_vs_bot import CombatEnv
 
 
 parser = ArgumentParser()
@@ -12,7 +12,7 @@ parser.add_argument("--camp", type=str, default="offensive")
 parser.add_argument("--reward_type", type=str, default="dense")
 config = parser.parse_args()
 
-env = CombatEnv(config)
+env = CombatEnv(**dict(config))
 env.reset()
 agents = env.agent_idx_dict
 
@@ -117,7 +117,6 @@ class TestEnv(unittest.TestCase):
         print(env.get_unit_by_unique_id(1))
         print(env.get_unit_by_unique_id(4))
         # self.assertTrue(np.all(np.equal(env.get_avail_agent_actions(1), [1., 0., 1., 1., 1., 0., 0., 0.])))
-
 
     def test_step_inf(self):
         for episode in range(10):
