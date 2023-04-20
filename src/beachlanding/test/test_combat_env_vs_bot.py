@@ -3,7 +3,7 @@ from argparse import ArgumentParser
 
 import numpy as np
 
-from beachlanding.combat_env_vs_bot import CombatEnv
+from src.beachlanding.combat_env_vs_bot import CombatEnv
 
 
 parser = ArgumentParser()
